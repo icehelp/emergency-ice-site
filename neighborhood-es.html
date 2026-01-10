@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ICE está en mi vecindario</title>
+  <style>
+    :root { --border: rgba(0,0,0,.18); --muted: rgba(0,0,0,.72); --soft: rgba(0,120,255,.08); }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.35; }
+    .wrap { max-width:820px; margin:0 auto; padding:18px; }
+    h1 { font-size:1.45rem; margin:10px 0 8px; }
+    h2 { font-size:1.1rem; margin:18px 0 8px; }
+    p, li { color: var(--muted); }
+    .lang-toggle { display:flex; gap:12px; margin:10px 0 14px; }
+    .lang-btn { flex:1; text-align:center; padding:10px 14px; border-radius:12px; border:1px solid var(--border); text-decoration:none; font-weight:700; color:#000; background:#fff; }
+    .lang-btn.active { border-width:2px; }
+    .btnrow { display:grid; grid-template-columns:1fr; gap:12px; margin:14px 0; }
+    .btn { display:block; text-align:center; padding:14px 14px; border-radius:16px; border:1px solid var(--border); text-decoration:none; font-weight:800; color:#000; background:#fff; }
+    .btn.secondary { font-weight:750; }
+    .box { border:1px solid var(--border); border-radius:16px; padding:14px; margin:12px 0; background:#fff; }
+    .alert { background: var(--soft); }
+    .small { font-size:.95rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="lang-toggle">
+      <a class="lang-btn" href="neighborhood.html">English</a>
+      <a class="lang-btn active" href="neighborhood-es.html">Español</a>
+    </div>
+
+    <h1>ICE está en mi vecindario</h1>
+
+    <div class="box alert">
+      <p><strong>Alto. Respira. Mantén la calma.</strong><br>
+      Ver ICE cerca no significa automáticamente que puedan entrar a casas o que debas interactuar.</p>
+
+      <h2 style="margin-top:10px;">Qué hacer primero</h2>
+      <ul>
+        <li>Entra a casa si no te sientes seguro</li>
+        <li>Mantén puertas cerradas</li>
+        <li>No te acerques a oficiales</li>
+        <li>No difundas rumores</li>
+      </ul>
+
+      <p class="small"><strong>Si documentas:</strong> graba desde distancia segura. No interfieras físicamente.</p>
+    </div>
+
+    <div class="btnrow">
+      <a class="btn" href="resources-es.html">Ayuda legal ahora (Recursos NYC / NJ)</a>
+      <a class="btn secondary" href="#" onclick="shareMyLocation(event)">Compartir mi ubicación</a>
+      <a class="btn secondary" href="index-es.html">Volver al inicio</a>
+    </div>
+
+    <div class="box">
+      <h2>Responsabilidad pública</h2>
+      <p>Si nadie está en peligro inmediato y es seguro, compartir información verificada públicamente puede aumentar la rendición de cuentas. Evita publicar en vivo si podría escalar o poner a alguien en riesgo.</p>
+    </div>
+
+    <div class="box small">
+      Este sitio es solo información general y no constituye asesoría legal.
+    </div>
+  </main>
+
+  <script>
+    async function shareMyLocation(ev) {
+      ev.preventDefault();
+      const message = "Mi ubicación:";
+      if (!navigator.geolocation) { alert("Este dispositivo no admite compartir ubicación."); return; }
+
+      navigator.geolocation.getCurrentPosition(async (pos) => {
+        const lat = pos.coords.latitude;
+        const lon = pos.coords.longitude;
+        const mapsUrl = `https://www.google.com/maps?q=${lat},${lon}`;
+        const text = `${message} ${mapsUrl}`;
+
+        if (navigator.share) {
+          try { await navigator.share({ text, url: mapsUrl, title: "Mi ubicación" }); return; } catch (e) {}
+        }
+        window.open(mapsUrl, "_blank");
+      }, () => {
+        alert("No se pudo obtener la ubicación. Puedes compartir desde tu app de mapas.");
+      }, { enableHighAccuracy: true, timeout: 8000 });
+    }
+  </script>
+</body>
+</html>
