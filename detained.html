@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>If Someone Is Being Detained</title>
+<title>Si alguien está siendo detenido</title>
 
 <style>
 body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
@@ -48,71 +48,3 @@ p, li { color:#444; }
 .lang .active { border:2px solid #1f4fd8; }
 
 footer { font-size:.9rem; color:#555; margin-top:20px; }
-</style>
-</head>
-
-<body>
-<main>
-  <div class="lang">
-    <a class="active" href="detained.html">English</a>
-    <a href="detained-es.html">Español</a>
-  </div>
-
-  <h1>If Someone Is Being Detained</h1>
-
-  <div class="box">
-    <p><strong>Stop. Breathe. Stay calm.</strong></p>
-    <ul>
-      <li>Write down full name and date of birth</li>
-      <li>Ask where they are being taken (if safe)</li>
-      <li>Document time, place, vehicles</li>
-      <li>Call for legal help immediately</li>
-    </ul>
-  </div>
-
-  <a class="btn" href="resources.html">Get legal help now</a>
-  <a class="btn secondary" href="#" onclick="shareLocation()">Share my location</a>
-  <a class="btn secondary" href="index.html">Back to Home</a>
-
-  <div class="box">
-    <h2>Locate someone in ICE custody</h2>
-    <p>
-      ICE Detainee Locator:<br>
-      <a href="https://locator.ice.gov" target="_blank">https://locator.ice.gov</a>
-    </p>
-  </div>
-
-  <div class="box">
-    <h2>Posting bond</h2>
-    <ul>
-      <li>Bonds are usually paid in full</li>
-      <li>Online payment via ICE CeBONDS is common</li>
-      <li>Some offices allow in-person payment (call ahead)</li>
-      <li>A lawyer can request a bond hearing if denied</li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h2>Public awareness</h2>
-    <p>
-      Share information only if safe and accurate.
-      Do not post private details or anything that could escalate.
-    </p>
-  </div>
-
-  <footer>
-    This site is for general information only and is not legal advice.<br>
-    Updated: January 2026
-  </footer>
-</main>
-
-<script>
-function shareLocation() {
-  navigator.geolocation.getCurrentPosition(pos=>{
-    const url = `https://maps.google.com/?q=${pos.coords.latitude},${pos.coords.longitude}`;
-    navigator.share ? navigator.share({url}) : window.open(url);
-  });
-}
-</script>
-</body>
-</html>
