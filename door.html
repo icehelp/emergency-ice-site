@@ -1,144 +1,42 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ICE Is at My Door</title>
-  <style>
-    :root { --border: rgba(0,0,0,.18); --muted: rgba(0,0,0,.72); --danger: rgba(200,0,0,.08); }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.35; }
-    .wrap { max-width: 820px; margin: 0 auto; padding: 18px; }
-    h1 { font-size: 1.45rem; margin: 10px 0 8px; }
-    h2 { font-size: 1.1rem; margin: 18px 0 8px; }
-    p, li { color: var(--muted); }
-    .lang-toggle { display: flex; gap: 12px; margin: 10px 0 14px; }
-    .lang-btn { flex: 1; text-align: center; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); text-decoration: none; font-weight: 700; color: #000; background: #fff; }
-    .lang-btn.active { border-width: 2px; }
-    .btnrow { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 14px 0; }
-    .btn { display: block; text-align: center; padding: 14px 14px; border-radius: 16px; border: 1px solid var(--border); text-decoration: none; font-weight: 800; color: #000; background: #fff; }
-    .btn.secondary { font-weight: 750; }
-    .box { border: 1px solid var(--border); border-radius: 16px; padding: 14px; margin: 12px 0; background: #fff; }
-    .alert { background: var(--danger); }
-    blockquote { margin: 10px 0; padding: 12px 14px; border-left: 4px solid rgba(0,0,0,.25); background: rgba(0,0,0,.03); border-radius: 12px; }
-    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    .small { font-size: .95rem; }
-  </style>
-</head>
-<body>
-  <main class="wrap">
-    <div class="lang-toggle">
-      <a class="lang-btn active" href="door.html">English</a>
-      <a class="lang-btn" href="door-es.html">Español</a>
-    </div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICE Is at My Door</title>
 
-    <h1>ICE Is at My Door</h1>
+<style>
+body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+main { max-width: 820px; margin:auto; padding:18px; }
+h1 { font-size:1.5rem; }
+h2 { font-size:1.1rem; margin-top:18px; }
+p, li { color:#444; }
 
-    <div class="box alert">
-      <p><strong>Stop. Breathe. Stay calm.</strong><br>
-      If possible, put children and pets in a separate room and keep everyone away from the door.</p>
+.btn {
+  display:block;
+  margin:10px 0;
+  padding:14px;
+  border-radius:16px;
+  text-align:center;
+  font-weight:800;
+  text-decoration:none;
+  background:#1f4fd8;
+  color:#fff;
+}
+.btn.secondary {
+  background:#e6efff;
+  color:#0b2d8f;
+}
 
-      <h2 style="margin-top:10px;">DO NOT OPEN THE DOOR</h2>
-      <p><strong>Do not open the door. Do not let anyone in.</strong> Speak through the door.</p>
+.box {
+  border:1px solid #ddd;
+  border-radius:16px;
+  padding:14px;
+  margin-top:14px;
+}
 
-      <h2 style="margin-top:10px;">Say this (out loud)</h2>
-      <blockquote>
-        “I do not consent to you entering my home.<br>
-        Please show me a warrant signed by a judge.”
-      </blockquote>
-      <blockquote>
-        “I am exercising my right to remain silent.<br>
-        I want to speak to a lawyer.”
-      </blockquote>
-
-      <p class="small"><strong>Do not:</strong> do not answer questions, do not sign anything, do not physically interfere.</p>
-    </div>
-
-    <div class="btnrow">
-      <a class="btn" href="resources.html">Get legal help now (NYC / NJ Resources)</a>
-      <a class="btn secondary" href="#" onclick="shareMyLocation(event)">Share my location with family/friends</a>
-      <a class="btn secondary" href="index.html">Back to Home</a>
-    </div>
-
-    <div class="box">
-      <h2>Important to know</h2>
-      <p>ICE may say many things to get you to open the door or come outside. You can keep the door closed. You have the right to remain silent.</p>
-    </div>
-
-    <div class="box">
-      <h2>Warrants — keep this simple</h2>
-      <ul>
-        <li>A <strong>judge-signed warrant</strong> is signed by a judge and often references a court (e.g., U.S. District Court).</li>
-        <li>An <strong>ICE administrative warrant</strong> (DHS/ICE paperwork) is generally <strong>not</strong> enough to enter your home without consent.</li>
-      </ul>
-      <p>If they claim to have a warrant, ask them to <strong>slide it under the door</strong> or <strong>hold it up to a window</strong>. Check for a judge’s signature and the correct address.</p>
-    </div>
-
-    <div class="box">
-      <h2>If they enter anyway</h2>
-      <p>Do <strong>not</strong> physically resist.</p>
-      <blockquote>
-        “I do not consent to your entry or search.<br>
-        I am exercising my right to remain silent.<br>
-        I want to speak to a lawyer.”
-      </blockquote>
-      <p>If it is safe, record audio/video and note the time and what is happening.</p>
-    </div>
-
-    <div class="box">
-      <h2>After the interaction</h2>
-      <ul>
-        <li>Write down names, badge numbers, and agency (if visible)</li>
-        <li>Save photos/videos</li>
-        <li>Write down exactly what was said</li>
-        <li>Contact legal help</li>
-      </ul>
-
-      <h2>Sharing information</h2>
-      <p>If it is safe and the situation has ended, you may choose to share verified information publicly to increase accountability. Do not post in real time if it could escalate the situation or put anyone at risk. Share facts only.</p>
-    </div>
-
-    <div class="box">
-      <h2>DO NOT</h2>
-      <ul>
-        <li>Do not open the door unless shown a judge-signed warrant</li>
-        <li>Do not lie or guess answers</li>
-        <li>Do not sign anything without a lawyer</li>
-        <li>Do not physically interfere or resist</li>
-      </ul>
-    </div>
-
-    <div class="box small">
-      This site is for general information only and is not legal advice.
-    </div>
-  </main>
-
-  <script>
-    async function shareMyLocation(ev) {
-      ev.preventDefault();
-      const message = "My location:";
-      const fallback = () => alert("If prompted, allow location. If sharing isn't available, your maps app will open.");
-
-      if (!navigator.geolocation) {
-        alert("Location sharing not supported on this device.");
-        return;
-      }
-
-      fallback();
-
-      navigator.geolocation.getCurrentPosition(async (pos) => {
-        const lat = pos.coords.latitude;
-        const lon = pos.coords.longitude;
-        const mapsUrl = `https://www.google.com/maps?q=${lat},${lon}`;
-        const text = `${message} ${mapsUrl}`;
-
-        if (navigator.share) {
-          try { await navigator.share({ text, url: mapsUrl, title: "My Location" }); return; } catch (e) {}
-        }
-        window.open(mapsUrl, "_blank");
-      }, () => {
-        alert("Could not get location. You can manually share your location from your Maps app.");
-      }, { enableHighAccuracy: true, timeout: 8000 });
-    }
-  </script>
-</body>
-</html>
+.lang { display:flex; gap:10px; }
+.lang a {
+  flex:1;
+  padding:10px;
+  border-radius:12px;
