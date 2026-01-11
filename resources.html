@@ -7,10 +7,10 @@
 
 <style>
 body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-main { max-width: 900px; margin:auto; padding:18px; }
+main { max-width:900px; margin:auto; padding:18px; }
 h1 { font-size:1.5rem; }
 h2 { font-size:1.1rem; margin-top:18px; }
-p, li { color:#444; }
+p { color:#444; }
 
 .btn {
   display:block;
@@ -20,4 +20,72 @@ p, li { color:#444; }
   text-align:center;
   font-weight:800;
   text-decoration:none;
-  background:#1f
+  background:#1f4fd8;
+  color:#fff;
+}
+.btn.secondary {
+  background:#e6efff;
+  color:#0b2d8f;
+}
+
+.box {
+  border:1px solid #ddd;
+  border-radius:16px;
+  padding:14px;
+  margin-top:14px;
+}
+
+.lang { display:flex; gap:10px; }
+.lang a {
+  flex:1;
+  padding:10px;
+  border-radius:12px;
+  border:1px solid #ccc;
+  text-align:center;
+  text-decoration:none;
+  font-weight:700;
+}
+.lang .active { border:2px solid #1f4fd8; }
+
+footer { font-size:.9rem; color:#555; margin-top:20px; }
+</style>
+</head>
+
+<body>
+<main>
+  <div class="lang">
+    <a class="active" href="resources.html">English</a>
+    <a href="resources-es.html">Español</a>
+  </div>
+
+  <h1>NYC / NJ Resources & Legal Help</h1>
+
+  <div class="box">
+    <h2>24/7 crisis hotlines</h2>
+
+    <p><strong>NYC Immigration Legal Support (MOIA)</strong><br>
+      📞 <a href="tel:8003540365">800-354-0365</a></p>
+
+    <p><strong>Help My Family (detention support)</strong><br>
+      📞 <a href="tel:18554357693">1-855-435-7693</a></p>
+
+    <p><strong>New Jersey — NJ 211</strong><br>
+      Dial <strong>211</strong> or text ZIP to <strong>898-211</strong></p>
+  </div>
+
+  <div class="box">
+    <h2>Locate someone</h2>
+    <p>
+      <a href="https://locator.ice.gov" target="_blank">https://locator.ice.gov</a>
+    </p>
+  </div>
+
+  <a class="btn secondary" href="index.html">Back to Home</a>
+
+  <footer>
+    This site is for general information only and is not legal advice.<br>
+    Updated: January 2026
+  </footer>
+</main>
+</body>
+</html>
